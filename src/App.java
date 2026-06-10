@@ -4,10 +4,24 @@ import java.util.Queue;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
        // runLinkList();
         //runQueue();
-        runStack();
+        //runStack();
+        //Ejercicio 1 //
+        Ejercicio1 ejercicio1 = new Ejercicio1();
+        String texto = "COMPUTACION";
+        String invertido = ejercicio1.invertString(texto);
+        System.out.println("Texto original: " + texto);
+        System.out.println("Texto invertido: " + invertido);
+        System.out.println("-----------------");
+        //Ejercicio 2 //
+        Ejercicio2 ejercicio2 = new Ejercicio2();
+        String palabra1 = "radar";
+        String palabra2 = "computacion";
+
+        System.out.println(ejercicio2.esPalindromo(palabra1));
+        System.out.println(ejercicio2.esPalindromo(palabra2));
     }
 
     private static void runStack() {

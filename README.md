@@ -1,18 +1,50 @@
-## Getting Started
+# Práctica: Estructuras Dinámicas Lineales
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Datos del Estudiante
+- **Nombre:** Renato Martin Amaya Siguenza
+- **Curso:** Grupo 3
+- **Fecha:** 09/06/2026
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 1. Implementación de estructuras dinámicas lineales
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+**Fecha:** 08/06/2026
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+**Descripción:**
+Implementación del método invertString que recibe una palabra, introduce cada uno de sus caracteres en una pila y luego los extrae. Por la naturaleza de la pila, los caracteres salen en orden inverso, devolviendo la palabra al revés.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Captura de salida en consola
 
-## Dependency Management
+![alt text](assets/salidaConsola.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Captura del código de implementación del ejercicio 1
+
+![alt text](assets/ejericio1Cap.png)
+
+
+
+
+## 2. Ejercicio Palíndromo
+
+**Fecha:** 09/06/2026
+
+**Descripción:**
+Desarrollo del método booleano esPalindromo. Reutiliza la lógica de la pila para invertir el texto original y compararlo directamente consigo mismo, determinando matemáticamente si la palabra se lee igual en ambas direcciones (ej. "radar").
+
+### Método implementado
+
+````java
+public boolean esPalindromo(String texto) {
+    ArrayDeque<Character> pila = new ArrayDeque<>();
+        for(char letra : texto.toCharArray()){
+            pila.push(letra);
+        }
+
+        String invertido = "";
+        while(!pila.isEmpty()){
+            invertido += pila.pop();
+        }
+        return texto.equals(invertido);
+
+}
